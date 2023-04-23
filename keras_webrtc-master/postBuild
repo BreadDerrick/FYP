@@ -1,0 +1,9 @@
+#!/bin/bash
+# this is used by repo2docker to do labextension stuff without a `Dockerfile`.
+#
+# it will run after a successful installation of `environment.yml`
+jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter-webrtc       # for jupyter lab
+# for uploading files
+jupyter nbextension install --py --user fileupload
+jupyter nbextension enable --py --user fileupload
+wget 'https://www.dropbox.com/s/3gzqrlltokl0vb2/full_skin_cancer_model.h5?dl=1' -O notebooks/skin_model.h5
